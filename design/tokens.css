@@ -1,0 +1,58 @@
+/* ============================================================
+   ДИЗАЙН-СИСТЕМА INDIGO LAB
+   Извлечено из b2b.indigolab.pro и certified.indigolab.pro
+   ============================================================ */
+
+:root {
+  /* -- БАЗОВЫЕ ЦВЕТА -- */
+  --background: oklch(13% .04 280);       /* #13102a — глубокий тёмно-фиолетовый */
+  --foreground: oklch(97% .01 270);       /* почти белый текст */
+  --card: oklch(18% .04 280);             /* фон карточек */
+  --card-foreground: oklch(97% .01 270);
+  --popover: oklch(18% .04 280);
+  --popover-foreground: oklch(97% .01 270);
+
+  /* -- АКЦЕНТНЫЕ ЦВЕТА -- */
+  --primary: oklch(72% .26 330);          /* #cd637c — основной magenta акцент */
+  --primary-foreground: oklch(99% 0 0);   /* белый на акценте */
+  --secondary: oklch(22% .05 285);        /* тёмный secondary */
+  --secondary-foreground: oklch(97% .01 270);
+  --muted: oklch(22% .04 285);
+  --muted-foreground: oklch(72% .04 280);
+  --accent: oklch(55% .22 295);           /* #903999 — violet акцент */
+  --accent-foreground: oklch(99% 0 0);
+
+  /* -- СЕМАНТИЧЕСКИЕ ЦВЕТА -- */
+  --violet: oklch(55% .22 295);           /* #8b5cf6 */
+  --magenta: oklch(72% .26 330);          /* #cd637c */
+  --cyan: oklch(78% .16 220);             /* #06b6d4 */
+  --pain: oklch(66% .18 35);              /* #f43f5e — для акцентов "боли" */
+
+  /* -- ГРАДИЕНТЫ -- */
+  --gradient-cta: linear-gradient(
+    115deg,
+    oklch(55% .22 295),          /* violet */
+    oklch(72% .26 330) 45%,      /* magenta */
+    oklch(78% .18 350) 75%,      /* розовый */
+    oklch(55% .22 295)           /* violet */
+  );
+
+  --gradient-nebula:             /* основной фоновый градиент */
+    radial-gradient(60% 50% at 18% 20%, oklab(72% .225 -.13 / .35), transparent 70%),
+    radial-gradient(55% 45% at 82% 30%, oklab(78% -.12 -.1 / .28), transparent 72%),
+    radial-gradient(70% 60% at 50% 90%, oklab(55% .09 -.2 / .32), transparent 75%);
+
+  /* -- ТЕНИ -- */
+  --shadow-halo: 0 0 80px -10px oklab(72% .225 -.13 / .5),
+                 0 0 160px -20px oklab(55% .09 -.2 / .45);
+  --shadow-glass: inset 0 1px 0 oklab(100% 0 0 / .1),
+                  0 30px 80px -30px oklab(0% none none / .7);
+  --shadow-cta: 0 10px 40px -10px oklab(72% .225 -.13 / .6),
+                0 0 0 1px oklab(100% 0 0 / .12) inset;
+
+  /* -- РАДИУСЫ -- */
+  --radius: 1rem;
+}
+
+/* Тёмная тема — единственная, сайт всегда в dark mode */
+:root { color-scheme: dark; }
