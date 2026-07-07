@@ -1,11 +1,13 @@
 /* ============================================================
    ДИЗАЙН-СИСТЕМА INDIGO LAB
    Извлечено из b2b.indigolab.pro и certified.indigolab.pro
+   (последнее обновление: 2026-07-07, версия certified)
    ============================================================ */
 
 :root {
   /* -- БАЗОВЫЕ ЦВЕТА -- */
-  --background: oklch(13% .04 280);       /* #13102a — глубокий тёмно-фиолетовый */
+  --background: #13102a;                  /* глубокий тёмно-фиолетовый */
+  --background-deep: #070214;             /* ещё более глубокий фон (certified) */
   --foreground: oklch(97% .01 270);       /* почти белый текст */
   --card: oklch(18% .04 280);             /* фон карточек */
   --card-foreground: oklch(97% .01 270);
@@ -13,13 +15,18 @@
   --popover-foreground: oklch(97% .01 270);
 
   /* -- АКЦЕНТНЫЕ ЦВЕТА -- */
-  --primary: oklch(72% .26 330);          /* #cd637c — основной magenta акцент */
-  --primary-foreground: oklch(99% 0 0);   /* белый на акценте */
+  /* b2b-вариант: magenta */
+  --primary: oklch(72% .26 330);          /* #cd637c — magenta акцент (b2b) */
+  --primary-foreground: oklch(99% 0 0);
+  /* certified-вариант: violet (более свежий, используется на certified) */
+  --primary-violet: #a855f7;              /* фиолетовый акцент (certified) */
+  --primary-violet-light: #b975ff;        /* светлый violet для hover */
+  --primary-violet-dark: #180a3c;         /* тёмный violet для карточек */
   --secondary: oklch(22% .05 285);        /* тёмный secondary */
   --secondary-foreground: oklch(97% .01 270);
   --muted: oklch(22% .04 285);
   --muted-foreground: oklch(72% .04 280);
-  --accent: oklch(55% .22 295);           /* #903999 — violet акцент */
+  --accent: oklch(55% .22 295);           /* #903999 — violet акцент (b2b) */
   --accent-foreground: oklch(99% 0 0);
 
   /* -- СЕМАНТИЧЕСКИЕ ЦВЕТА -- */
@@ -28,23 +35,39 @@
   --cyan: oklch(78% .16 220);             /* #06b6d4 */
   --pain: oklch(66% .18 35);              /* #f43f5e — для акцентов "боли" */
 
+  /* -- СТАТУСНЫЕ ЦВЕТА (из certified) -- */
+  --success: oklch(69.6% .17 162.48);     /* emerald-500 */
+  --warning: oklch(76.9% .188 70.08);     /* amber-500 */
+  --error: oklch(63.7% .237 25.331);      /* red-500 */
+
   /* -- ГРАДИЕНТЫ -- */
+  /* CTA: violet → magenta → розовый (115deg) */
   --gradient-cta: linear-gradient(
     115deg,
-    oklch(55% .22 295),          /* violet */
-    oklch(72% .26 330) 45%,      /* magenta */
-    oklch(78% .18 350) 75%,      /* розовый */
-    oklch(55% .22 295)           /* violet */
+    #a855f7,          /* violet */
+    #cd637c 45%,      /* magenta */
+    oklch(78% .18 350) 75%,  /* розовый */
+    #a855f7           /* violet */
   );
 
-  --gradient-nebula:             /* основной фоновый градиент */
+  /* Фоновый nebula-градиент */
+  --gradient-nebula:
     radial-gradient(60% 50% at 18% 20%, oklab(72% .225 -.13 / .35), transparent 70%),
     radial-gradient(55% 45% at 82% 30%, oklab(78% -.12 -.1 / .28), transparent 72%),
     radial-gradient(70% 60% at 50% 90%, oklab(55% .09 -.2 / .32), transparent 75%);
 
+  /* Violet-градиент для кнопок (certified) */
+  --gradient-violet: linear-gradient(to right, #a855f7, #6366f1);
+
   /* -- ТЕНИ -- */
   --shadow-halo: 0 0 80px -10px oklab(72% .225 -.13 / .5),
                  0 0 160px -20px oklab(55% .09 -.2 / .45);
+
+  /* Violet glow (из certified) */
+  --shadow-glow-violet: 0 0 15px rgba(168, 85, 247, 0.3);
+  --shadow-glow-violet-lg: 0 0 20px rgba(168, 85, 247, 0.4);
+  --shadow-glow-violet-xl: 0 0 30px rgba(168, 85, 247, 0.2);
+
   --shadow-glass: inset 0 1px 0 oklab(100% 0 0 / .1),
                   0 30px 80px -30px oklab(0% none none / .7);
   --shadow-cta: 0 10px 40px -10px oklab(72% .225 -.13 / .6),
@@ -52,6 +75,15 @@
 
   /* -- РАДИУСЫ -- */
   --radius: 1rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+
+  /* -- ШРИФТЫ -- */
+  /* b2b: Manrope + Fraunces / certified: Inter + JetBrains Mono */
+  /* Оба варианта допустимы. Для нового сайта рекомендуется Inter (основной) */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 /* Тёмная тема — единственная, сайт всегда в dark mode */

@@ -8,15 +8,34 @@
 
 ## Эталон дизайна
 
-Смотри на [b2b.indigolab.pro](https://b2b.indigolab.pro) и [certified.indigolab.pro](https://certified.indigolab.pro) — это правильный стиль:
+Смотри на [b2b.indigolab.pro](https://b2b.indigolab.pro) и [certified.indigolab.pro](https://certified.indigolab.pro) — это правильный стиль.
 
-- Тёмная тема (фон `#13102a`, глубокий фиолетовый), dark-only
+**⚠️ certified.indigolab.pro — самая свежая версия дизайна (июль 2026).** Ориентируйся на неё в первую очередь. Страница b2b — дополнительный референс.
+
+### Общие черты обоих эталонов:
+- Тёмная тема (фон `#13102a` или `#070214`, глубокий фиолетовый), dark-only
 - Nebula-градиент на фоне (тройной radial-gradient)
-- Стеклянные карточки (glassmorphism: `inset 0 1px 0 oklab(100% 0 0 / .1)`)
-- Градиентные CTA-кнопки: violet → magenta → розовый (115deg)
-- Типографика: Manrope (основной), Fraunces (декоративные заголовки)
+- Стеклянные карточки (glassmorphism: полупрозрачный фон + `backdrop-blur`)
+- Градиентные CTA-кнопки: violet → magenta → розовый
 - Много воздуха, крупные заголовки, плавные анимации fade-in + slide-up
 - Акцентные линии и glow-эффекты
+
+### Отличия certified (новый) от b2b (старый):
+| Элемент | b2b | certified (NEW) |
+|---|---|---|
+| Основной шрифт | Manrope | **Inter** |
+| Декоративный шрифт | Fraunces | — |
+| Моноширинный | — | **JetBrains Mono** |
+| Акцентный цвет | magenta `#cd637c` | **violet `#a855f7`** |
+| Glow-тени | halo-эффекты | **`0 0 15-30px rgba(168,85,247,0.2-0.4)`** |
+| Градиент кнопок | violet→magenta→pink | **`#a855f7 → #6366f1`** или violet→magenta→pink |
+
+**Для нового сайта используй подход certified:**
+- Шрифты: **Inter** (300, 400, 500, 600, 700, 800) + **JetBrains Mono** для кода/статусов
+- Акцент: **`#a855f7`** (violet), ховер: `#b975ff`
+- Фон: многослойный (`#070214` → `#13102a` → `#1c1438`)
+- Карточки: тёмные с фиолетовым отливом (`#180a3c`, `#180a47`), граница `#2c135c` с разной прозрачностью
+- Статусные цвета: emerald (успех), amber (предупреждение), red/rose (ошибка)
 
 Все дизайн-токены в `design/tokens.css`. Полные CSS эталонов в `design/b2b-full.css` и `design/certified-full.css`.
 
@@ -318,9 +337,12 @@
 ## Общие правила для всех страниц
 
 **Что делать:**
-- Брать дизайн с b2b.indigolab.pro и certified.indigolab.pro
+- Брать дизайн с certified.indigolab.pro (приоритет) и b2b.indigolab.pro (дополнительно)
 - Брать контент из файлов в `content/` и `content/from-tilda/`
 - Использовать дизайн-токены из `design/tokens.css`
+- Шрифты: Inter (основной, начертания 300-800) + JetBrains Mono (моноширинный)
+- Акцентный цвет: `#a855f7` (violet), ховер: `#b975ff`
+- Градиент CTA: `#a855f7 → #6366f1` или violet → magenta → розовый (115deg)
 - Все ассеты (изображения, иконки) — локально в `/assets/`
 - Адаптив: mobile-first
 - Делать страницы лёгкими, с минимумом клиентской логики (статика, не SPA с кучей стейта)
